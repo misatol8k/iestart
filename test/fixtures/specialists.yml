@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  expertise_property: MyString
+  consultation_item: MyString
+  qualification: MyString
+  description: MyText
+  career: MyText
+  icon: MyString
+  string: MyString
+
+two:
+  name: MyString
+  expertise_property: MyString
+  consultation_item: MyString
+  qualification: MyString
+  description: MyText
+  career: MyText
+  icon: MyString
+  string: MyString
