@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'property/index'
+  get 'property/new'
+  get 'property/show'
   get 'customers/index'
   get 'customers/new'
   get 'customers/show'
