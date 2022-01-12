@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'property#index'
   get 'property/index'
   get 'property/new'
   get 'property/show'
