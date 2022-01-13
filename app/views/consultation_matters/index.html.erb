@@ -1,2 +1,18 @@
 <h1>ConsultationMatters#index</h1>
-<p>Find me in app/views/consultation_matters/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consultation_matters.each do |consultation_matter| %>
+      <tr>
+        <td><%= consultation_matter.item %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
