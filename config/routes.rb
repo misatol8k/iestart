@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  root 'properties#index'
+  resources :properties
   get 'consultation_matters/index'
   get 'consultation_matters/new'
   get 'consultation_matters/show'
-  root 'properties#index'
-  resources :properties
   get 'customers/index'
   get 'customers/new'
   get 'customers/show'
