@@ -24,6 +24,9 @@
         <td><%= specialist.description %></td>
         <td><%= specialist.career %></td>
         <td><%= specialist.icon %></td>
+        <td><%= specialist.icon %></td>
+        <td><%= specialist.id %></td>
+        <td><%= link_to '相談を申し込む', matching_path(@specialist.id) %></td>
      </tr>
     <% end %>
   </tbody>
