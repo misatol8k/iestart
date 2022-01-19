@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   get 'customers/new'
   get 'customers/show'
 
-  get 'specialists/index'
-  get 'specialists/show'
+  # get 'specialists/index'
+  # get 'specialists/show'
+  resources :specialists
 
-  get 'matchings/index'
-  get 'matchings/show'
-  
+  # get 'matchings/index'
+  # get 'matchings/new'
+  # get 'matchings/show'
+  resources :matchings
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

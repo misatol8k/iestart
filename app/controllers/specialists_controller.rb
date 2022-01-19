@@ -4,5 +4,6 @@ class SpecialistsController < ApplicationController
   end
 
   def show
+    @specialist = Specialist.find(params[:id])
   end
 end

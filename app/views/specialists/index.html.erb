@@ -21,6 +21,7 @@
         <td><%= specialist.career %></td>
         <td><%= specialist.icon %></td>
         <td><%= specialist.string %></td>
+        <td><%= link_to '詳細', specialist_path(specialist.id) %></td>
      </tr>
     <% end %>
   </tbody>
