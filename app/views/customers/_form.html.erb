@@ -1,0 +1,10 @@
+<%= form_with(model: @customer, local: true ) do |form| %>
+  <table>
+    <tr>
+      <th>氏名</th>
+      <td><%= form.text_field :name %></td>
+      <th>メールアドレス</th>
+      <td><%= form.text_field :mail %></td>
+    </tr>
+  </table>
+<% end %>
