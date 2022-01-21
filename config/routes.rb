@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'properties#index'
+  root 'properties#new'
   resources :properties
-  
+
   get 'consultation_matters/index'
   get 'consultation_matters/new'
   get 'consultation_matters/show'
