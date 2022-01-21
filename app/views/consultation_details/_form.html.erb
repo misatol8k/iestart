@@ -1,0 +1,8 @@
+<%= form_with(model: @consultation_detail, local: true ) do |form| %>
+  <table>
+    <tr>
+      <th>氏名</th>
+      <td><%= form.text_field :content %></td>
+    </tr>
+  </table>
+<% end %>
