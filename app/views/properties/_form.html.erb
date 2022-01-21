@@ -12,27 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :property_type %>
+    <%= form.label :物件種類 %>
     <%= form.text_field :property_type %>
   </div>
 
   <div class="field">
-    <%= form.label :url %>
+    <%= form.label :物件URL %>
     <%= form.text_field :url %>
   </div>
 
   <div class="field">
-    <%= form.label :other %>
+    <%= form.label :物件名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :その他 %>
     <%= form.text_field :other %>
   </div>
 
   <div class="field">
-    <%= form.label :trader %>
+    <%= form.label :取扱会社 %>
     <%= form.text_field :trader %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :販売価格（業者からの提案価格） %>
     <%= form.text_field :price %>
   </div>
 

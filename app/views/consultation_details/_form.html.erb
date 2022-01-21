@@ -1,7 +1,9 @@
 <%= form_with(model: @consultation_detail, local: true ) do |form| %>
   <table>
     <tr>
-      <th>氏名</th>
+      <th></th>
+      <td><%#= form.collection_check_boxes(:consultation_matter_ids, Consultation_matter.all, :id, :item) %></td>
+      <th>相談したい内容をなるべく具体的に記載ください</th>
       <td><%= form.text_field :content %></td>
     </tr>
   </table>

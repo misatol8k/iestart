@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= form.label :相談事項 %>
-    <%= form.text_field :item %>
+    <%#= form.text_field :item %>
+    <%= form.collection_check_boxes(:consultation_matter_ids, Consultation_matter.all, :id, :item) %>
   </div>
 
   <div class="actions">

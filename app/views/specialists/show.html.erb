@@ -17,13 +17,5 @@
 <h3>専門家に相談するためお客様情報をご記入ください</h3>
 <%= render partial: "customers/form" %>
 <h3>相談したい内容をご記入ください</h3>
-<%= render partial: "consultation_matters/form" %>
-
-<%#= form_with(model: @consultation_detail, local: true ) do |form| %>
-  <table>
-    <tr>
-      <th></th>
-      <td><%#= form.text_field :content %></td>
-    </tr>
-  </table>
-<%# end %>
+<%#= render partial: "consultation_matters/form" %>
+<%= render partial: "consultation_details/form" %>
