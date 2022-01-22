@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_070124) do
+ActiveRecord::Schema.define(version: 2022_01_22_144216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(version: 2022_01_18_070124) do
     t.string "string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "newly_built_house", null: false
+    t.integer "used_house", null: false
+    t.integer "newly_built_condominium", null: false
+    t.integer "used_condominium", null: false
+    t.integer "land", null: false
+    t.integer "price_and_pepayment", null: false
+    t.integer "building_and_structure", null: false
+    t.integer "floor_plan", null: false
+    t.integer "surrounding_environment", null: false
+    t.integer "family_relatives", null: false
+    t.integer "other_point", null: false
   end
 
 end
