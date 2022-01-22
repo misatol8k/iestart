@@ -1,22 +1,23 @@
-<%= form_with(model: consultation_matter, local: true) do |form| %>
-  <% if consultation_matter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(consultation_matter.errors.count, "error") %> prohibited this consultation_matter from being saved:</h2>
+<%= form_with(model: @consultation_matter, local: true) do |form| %>
+  <%# if consultation_matter.errors.any? %>
+    <!-- <div id="error_explanation">
+      <h2><%#= pluralize(consultation_matter.errors.count, "error") %> prohibited this consultation_matter from being saved:</h2>
 
       <ul>
-      <% consultation_matter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <%# consultation_matter.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
       </ul>
-    </div>
-  <% end %>
+    </div> -->
+  <%# end %>
 
   <div class="field">
-    <%= form.label :item %>
-    <%= form.text_field :item %>
+    <%= form.label :相談事項 %>
+    <%#= form.text_field :item %>
+    <%= form.collection_check_boxes(:consultation_matter_ids, ConsultationMatter.all, :id, :item) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%#= form.submit %>
   </div>
 <% end %>

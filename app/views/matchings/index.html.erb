@@ -1,0 +1,35 @@
+<h1>Matchings#index</h1>
+<p>Find me in app/views/matchings/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>専門分野</th>
+      <th>相談可能項目</th>
+      <th>資格</th>
+      <th>自己紹介</th>
+      <th>経歴</th>
+      <th>アイコン</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @specialists.each do |specialist| %>
+      <tr>
+        <td><%= specialist.name %></td>
+        <td><%= specialist.expertise_property %></td>
+        <td><%= specialist.consultation_item %></td>
+        <td><%= specialist.qualification %></td>
+        <td><%= specialist.description %></td>
+        <td><%= specialist.career %></td>
+        <td><%= specialist.icon %></td>
+        <td><%= specialist.icon %></td>
+        <td><%= specialist.id %></td>
+        <td><%#= link_to '相談を申し込む', new_matching_path %></td>
+        <td><%= link_to '相談を申し込む', specialist_path(specialist.id) %></td>
+        <td><%#= link_to '相談を申し込む', matching_path(specialist.id) %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>

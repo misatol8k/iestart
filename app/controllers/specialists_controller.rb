@@ -4,5 +4,8 @@ class SpecialistsController < ApplicationController
   end
 
   def show
+    @specialist = Specialist.find(params[:id])
+    # @customer = Customer.new
+    # render template: "customers/new"
   end
 end

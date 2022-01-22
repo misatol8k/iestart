@@ -1,2 +1,21 @@
 <h1>Specialists#show</h1>
 <p>Find me in app/views/specialists/show.html.erb</p>
+
+<div class="specialist">
+  <%= @specialist.name %>
+  <%= @specialist.expertise_property %>
+  <%= @specialist.consultation_item %>
+  <%= @specialist.qualification %>
+  <%= @specialist.description %>
+  <%= @specialist.career %>
+  <%= @specialist.icon %>
+  <%= @specialist.icon %>
+  <%= @specialist.id %>
+</div>
+
+
+<h3>専門家に相談するためお客様情報をご記入ください</h3>
+<%= render partial: "customers/form" %>
+<h3>相談したい内容をご記入ください</h3>
+<%= render partial: "consultation_matters/form" %>
+<%= render partial: "consultation_details/form" %>
