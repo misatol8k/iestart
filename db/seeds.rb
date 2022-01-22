@@ -9,9 +9,9 @@ Property.create(property_type: 1, url: "url/bukkenjouhou1.jp", other: "sonota1",
 Property.create(property_type: 2, url: "url/bukkenjouhou2.jp", other: "sonota2", trader: "XXhome", price: 50000)
 Property.create(property_type: 3, url: "url/bukkenjouhou3.jp", other: "sonota3", trader: "XXhome", price: 110000)
 
-Specialist.create(name:"専門家の名前1", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。")
-Specialist.create(name:"専門家の名前2", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。")
-Specialist.create(name:"専門家の名前3", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。")
+Specialist.create(name:"専門家の名前1", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。", newly_built_house:1 , used_house:1 , newly_built_condominium:1 , used_condominium:1 , land:1 , price_and_pepayment:1 , building_and_structure:1 , floor_plan:1 , surrounding_environment:1 , family_relatives:1, other_point:1 )
+Specialist.create(name:"専門家の名前2", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。", newly_built_house:2 , used_house:2 , newly_built_condominium:5 , used_condominium:5 , land:3 , price_and_pepayment:2 , building_and_structure:3 , floor_plan:1 , surrounding_environment:1 , family_relatives:4, other_point:2 )
+Specialist.create(name:"専門家の名前3", expertise_property:"得意な物件です", consultation_item:"得意な相談項目です", qualification:"資格の内容です", description:"専門家の説明です。", career:"専門家の経歴です。", newly_built_house:5 , used_house:4 , newly_built_condominium:3 , used_condominium:3 , land:5 , price_and_pepayment:4 , building_and_structure:2 , floor_plan:5 , surrounding_environment:4 , family_relatives:4, other_point:1 )
 
 PropertyList.create(property_type:"新築戸建")
 PropertyList.create(property_type:"中古戸建")
