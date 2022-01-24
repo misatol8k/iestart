@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'active_hash'
+# Use active hash 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -37,7 +38,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry-rails'
 end
-
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
