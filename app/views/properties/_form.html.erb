@@ -17,6 +17,66 @@
   </div>
 
   <div class="field">
+    <%= form.label :新築戸建 %>
+    <%= form.check_box :newly_built_house, {}, checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :中古戸建 %>
+    <%= form.check_box :used_house, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :新築マンション %>
+    <%= form.check_box :newly_built_condominium, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :中古マンション %>
+    <%= form.check_box :used_condominium, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :土地のみ %>
+    <%= form.check_box :land, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :価格・返済 %>
+    <%= form.check_box :price_and_pepayment, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :建物・構造 %>
+    <%= form.check_box :building_and_structure, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :間取り %>
+    <%= form.check_box :floor_plan, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :周辺環境 %>
+    <%= form.check_box :surrounding_environment, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :家族・親族 %>
+    <%= form.check_box :family_relatives, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :その他の点 %>
+    <%= form.check_box :other_point, {},checked_value='1', unchecked_value='0' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :都道府県 %>
+    <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"} ) %>
+  </div>
+
+  <div class="field">
     <%= form.label :物件URL %>
     <%= form.text_field :url %>
   </div>
