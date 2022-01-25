@@ -1,4 +1,40 @@
 <%= form_with(model: @customer, local: true ) do |form| %>
+
+  <div class="green">
+  <h3>オススメの専門家が5名見つかりました</h3>
+  </div>
+
+  <div class="specialist">
+  <% @specialists.each do |specialist| %>
+    <div class="chunk">
+      <div class="name"><p>氏名</p><%= specialist.name %></div>
+      <div class="expertise_property"><p>得意な物件</p><%= specialist.expertise_property %></div>
+      <div class="consultation_item"><p>相談可能項目</p><%#= specialist.consultation_item %></div>
+      <div class="qualification"><p>資格</p><%#= specialist.qualification %></div>
+      <div class="description"><p>自己紹介</p><%= specialist.description %></div>
+      <div class="career"><p>経歴</p><%= specialist.career %></div>
+      <div class="icon"><p>アイコン</p><%= specialist.icon %></div>
+      <div class="string"><p></p><%#= specialist.string %></div>
+      <%#= link_to '相談を申し込む', specialist_path(specialist.id), class: "next" %>
+    </div>
+  <% end %>
+
+
+  <!-- <div class="specialist"> -->
+    <%#= @specialist.name %>
+    <%#= @specialist.expertise_property %>
+    <%#= @specialist.consultation_item %>
+    <%#= @specialist.qualification %>
+    <%#= @specialist.description %>
+    <%#= @specialist.career %>
+    <%#= @specialist.icon %>
+    <%#= @specialist.icon %>
+    <%#= @specialist.id %>
+  <!-- </div> -->
+
+
+  <h3>専門家に相談するためお客様情報をご記入ください</h3>
+  <%#= render partial: "customers/form" %>
   <table>
     <tr>
       <th>氏名</th>
@@ -7,4 +43,11 @@
       <td><%= form.text_field :mail %></td>
     </tr>
   </table>
+
+  <h3>相談したい内容をご記入ください</h3>
+  <%= render partial: "consultation_matters/form" %>
+  <%= render partial: "consultation_details/form" %>
+
+  <%= form.submit %>
+
 <% end %>
