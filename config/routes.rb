@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get 'consultation_matters/new'
   get 'consultation_matters/show'
 
-  get 'customers/index'
-  get 'customers/new'
-  get 'customers/show'
+  # get 'customers/index'
+  # get 'customers/new'
+  # get 'customers/show'
+  resources :customers
 
   # get 'specialists/index'
   # get 'specialists/show'

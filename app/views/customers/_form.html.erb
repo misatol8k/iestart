@@ -34,15 +34,12 @@
 
 
   <h3>専門家に相談するためお客様情報をご記入ください</h3>
-  <%#= render partial: "customers/form" %>
-  <table>
-    <tr>
-      <th>氏名</th>
-      <td><%= form.text_field :name %></td>
-      <th>メールアドレス</th>
-      <td><%= form.text_field :mail %></td>
-    </tr>
-  </table>
+  <%= form_with(model: @customer, local: true ) do |form| %>
+    氏名
+    <%= form.text_field :name %>
+    メールアドレス
+    <%= form.text_field :mail %>
+  <% end %>
 
   <h3>相談したい内容をご記入ください</h3>
   <%= render partial: "consultation_matters/form" %>
