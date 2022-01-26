@@ -4,11 +4,11 @@ class CustomersController < ApplicationController
 
   def new
     @specialists = Specialist.all
-    @consultation_matters = ConsultationMatter.all
+    # @consultation_matters = ConsultationMatter.all
     # @specialist = Specialist.find(params[:id])
   end
 
   def show
   end
-  
+
 end

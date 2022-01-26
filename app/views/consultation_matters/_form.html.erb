@@ -17,8 +17,10 @@
       <%= consultation_matter.label do %>
         <%= consultation_matter.check_box %>
         <%#= consultation_matter.item %>
+
+        <%= render partial: "consultation_details/form" %>
       <% end %>
     <% end %>
   </div>
-  
+
 <% end %>

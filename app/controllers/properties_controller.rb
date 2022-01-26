@@ -7,6 +7,8 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @consultation_matters = ConsultationMatter.all
+    # @consultation_detail = ConsultationDetail.all
   end
 
   def create
