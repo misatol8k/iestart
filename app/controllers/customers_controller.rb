@@ -8,7 +8,27 @@ class CustomersController < ApplicationController
     # @specialist = Specialist.find(params[:id])
   end
 
+  def create
+    @customer = Customer.new(customer_params)
+
+    respond_to do |format|
+      if @customer.save
+        ContactMailer.contact_mail(@customer).deliver
+        format.html { redirect_to "/propertys/new", notice: "Property was successfully created." }
+        format.json { render :new, status: :created, location: @customer }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @customer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def show
   end
 
+  private
+
+  def customer_params
+    params.require(:customer).permit( :name, :mail)
+  end
 end
