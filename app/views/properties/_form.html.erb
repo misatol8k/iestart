@@ -17,106 +17,107 @@
 
   <h3>Ｑ、購入の決断に迷っている物件情報を入力してください</h3>
 
-  <div class="property">
-    <h4>検討物件</h4>
-
     <div class="field">
-      <%= form.label :物件種類 %>
+      <%= form.label :検討物件, class: "label" %>
+      <div class="property">
 
-      <div class="type">
-        <%= form.label :新築戸建 %>
-        <%= form.check_box :newly_built_house, {}, checked_value='1', unchecked_value='0' %>
+        <%= form.label :物件種類, class: "label" %>
+        <div class="type_group">
+          <div class="type">
+            <%= form.check_box :newly_built_house, {}, checked_value='1', unchecked_value='0' %>
+            <%= form.label :新築戸建 %>
+          </div>
+
+          <div class="type">
+            <%= form.check_box :used_house, {},checked_value='1', unchecked_value='0' %>
+            <%= form.label :中古戸建 %>
+          </div>
+
+          <div class="type">
+            <%= form.check_box :newly_built_condominium, {},checked_value='1', unchecked_value='0' %>
+            <%= form.label :新築マンション %>
+          </div>
+
+          <div class="type">
+            <%= form.check_box :used_condominium, {},checked_value='1', unchecked_value='0' %>
+            <%= form.label :中古マンション %>
+          </div>
+
+          <div class="type">
+            <%= form.check_box :land, {},checked_value='1', unchecked_value='0' %>
+            <%= form.label :土地のみ %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :都道府県, class: "label" %>
+          <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"}, class: "input" ) %>
+        </div>
+
+        <div class="field">
+          <%= form.label :物件URL, class: "label" %>
+          <%= form.text_field :url, class: "input" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :物件名, class: "label" %>
+          <%= form.text_field :name, class: "input" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :その他, class: "label" %>
+          <%= form.text_field :other, class: "input" %>
+        </div>
       </div>
-
-      <div class="type">
-        <%= form.label :中古戸建 %>
-        <%= form.check_box :used_house, {},checked_value='1', unchecked_value='0' %>
-      </div>
-
-      <div class="type">
-        <%= form.label :新築マンション %>
-        <%= form.check_box :newly_built_condominium, {},checked_value='1', unchecked_value='0' %>
-      </div>
-
-      <div class="type">
-        <%= form.label :中古マンション %>
-        <%= form.check_box :used_condominium, {},checked_value='1', unchecked_value='0' %>
-      </div>
-
-      <div class="type">
-        <%= form.label :土地のみ %>
-        <%= form.check_box :land, {},checked_value='1', unchecked_value='0' %>
-      </div>
-    </div>
-
-
-    <div class="field">
-      <%= form.label :都道府県 %>
-      <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"} ) %>
     </div>
 
     <div class="field">
-      <%= form.label :物件URL %>
-      <%= form.text_field :url %>
+      <%= form.label :取扱会社, class: "label" %>
+      <%= form.text_field :trader, class: "input" %>
     </div>
 
     <div class="field">
-      <%= form.label :物件名 %>
-      <%= form.text_field :name %>
+      <%= form.label :販売価格（業者からの提案価格）, class: "label" %>
+      <%= form.text_field :price, class: "input" %>
     </div>
 
-    <div class="field">
-      <%= form.label :その他 %>
-      <%= form.text_field :other %>
-    </div>
-
-    <div class="field">
-      <%= form.label :取扱会社 %>
-      <%= form.text_field :trader %>
-    </div>
-
-    <div class="field">
-      <%= form.label :販売価格（業者からの提案価格） %>
-      <%= form.text_field :price %>
-    </div>
-  </div>
 
   <h3>Ｑ、購入を決断する上で相談したいことはなんですか？（複数選択可）</h3>
   <%#= render partial: "consultation_matters/form" %>
   <%#= render partial: "consultation_details/form" %>
   <div class="field">
-    <%= form.label :価格・返済 %>
     <%= form.check_box :price_and_pepayment, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :価格・返済 %>
     <%= render partial: "consultation_details/form" %>
   </div>
 
   <div class="field">
-    <%= form.label :建物・構造 %>
     <%= form.check_box :building_and_structure, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :建物・構造, class: "label" %>
     <%= render partial: "consultation_details/form" %>
   </div>
 
   <div class="field">
-    <%= form.label :間取り %>
     <%= form.check_box :floor_plan, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :間取り, class: "label" %>
     <%= render partial: "consultation_details/form" %>
   </div>
 
   <div class="field">
-    <%= form.label :周辺環境 %>
     <%= form.check_box :surrounding_environment, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :周辺環境, class: "label" %>
     <%= render partial: "consultation_details/form" %>
   </div>
 
   <div class="field">
-    <%= form.label :家族・親族 %>
     <%= form.check_box :family_relatives, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :家族・親族, class: "label" %>
     <%= render partial: "consultation_details/form" %>
   </div>
 
   <div class="field">
-    <%= form.label :その他の点 %>
     <%= form.check_box :other_point, {},checked_value='1', unchecked_value='0' %>
+    <%= form.label :その他の点, class: "label" %>
     <%= render partial: "consultation_details/form" %>
   </div>
 

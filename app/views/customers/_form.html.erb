@@ -7,15 +7,39 @@
   <div class="specialist">
   <% @specialists.each do |specialist| %>
     <div class="chunk">
-      <div class="name"><p>氏名</p><%= specialist.name %></div>
-      <div class="expertise_property"><p>得意な物件</p><%= specialist.expertise_property %></div>
-      <div class="consultation_item"><p>相談可能項目</p><%#= specialist.consultation_item %></div>
-      <div class="qualification"><p>資格</p><%#= specialist.qualification %></div>
-      <div class="description"><p>自己紹介</p><%= specialist.description %></div>
-      <div class="career"><p>経歴</p><%= specialist.career %></div>
       <div class="icon"><p>アイコン</p><%= specialist.icon %></div>
-      <div class="string"><p></p><%#= specialist.string %></div>
-      <%#= link_to '相談を申し込む', specialist_path(specialist.id), class: "next" %>
+
+      <div class="short">
+        <div class="field">
+          <p>氏名</p><%= specialist.name %>
+        </div>
+
+        <div class="field">
+          <p>得意な物件</p><%= specialist.expertise_property %>
+        </div>
+
+        <div class="field">
+          <p>相談可能項目</p><%= specialist.consultation_item %>
+        </div>
+
+        <div class="field">
+          <p>資格</p><%= specialist.qualification %>
+        </div>
+      </div>
+
+      <div class="long">
+        <div class="field">
+          <p>自己紹介</p><%= specialist.description %>
+        </div>
+
+        <div class="field">
+          <p>経歴</p><%= specialist.career %>
+        </div>
+      </div>
+
+      <div class="btn">
+        <%= link_to '相談を申し込む', class: "next" %>
+      </div>
     </div>
   <% end %>
 
@@ -35,12 +59,31 @@
 
   <h3>専門家に相談するためお客様情報をご記入ください</h3>
   <%= form_with(model: @customer, local: true ) do |form| %>
-    氏名
-    <%= form.text_field :name %>
-    メールアドレス
-    <%= form.text_field :mail %>
+    <div class="field">
+      <%= form.label :氏名（必須）, class: "label" %>
+      <%= form.text_field :name, class: "input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :メールアドレス（必須）, class: "label" %>
+      <%= form.text_field :mail, class: "input" %>
+    </div>
   <% end %>
 
-  <%= form.submit %>
+  <div class="message">
+    <p>お客様のご相談内容に対して、</p>
+    <p>専門家が24時間以内に</p>
+    <p>登録したメールアドレス宛に</p>
+    <p>回答をお送りします。</p>
+  </div>
+
+  <div class="privacy_policy">
+    ㈱エンサポートのプライバシーポリシーは
+    <%= link_to "こちら" %>
+  </div>
+
+  <div class="btn">
+    <%= form.submit "プライバシーポリシーに同意して専門家に相談内容を送る", class: "next" %>
+  </div>
 
 <% end %>

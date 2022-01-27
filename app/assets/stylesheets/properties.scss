@@ -1,3 +1,36 @@
 // Place all the styles related to the properties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.property {
+  width: 90%;
+  margin: auto;
+  border: 1px solid;
+}
+
+.field {
+  margin: 10px 0;
+}
+
+.type_group {
+  width: 80%;
+  margin: auto;
+}
+.type {
+  display: inline-block;
+  width: 30%;
+}
+
+.label {}
+
+.input {
+  width: 400px;
+  border: 1px solid;
+  margin: 0 67px 0px 67px;
+  background-color: #DDDDDD;
+}
+
+.text {
+  width: 400px;
+  height: 60px;
+}

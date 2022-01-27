@@ -21,7 +21,7 @@
  body {
   /* display: flex; */
   /* flex-direction: column; */
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   text-align: center;
   background-color: white;
@@ -36,20 +36,20 @@
   color: white;
 }
 
-.chunk {
-  border: 2px solid;
-  padding-bottom: 15px;
-  margin: 20px;
-}
+.btn {}
 
 .next {
   text-decoration: none;
-  /* border: 1px solid; */
+  border: 1px solid;
+  border-color: orange;
+  /* border: none; */
   padding: 10px;
   background-color: orange;
   color: white;
 }
 .next:hover {
+  border: 1px solid;
+  border-color: black;
   background-color: orange;
   color: white;
 }
