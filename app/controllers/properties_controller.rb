@@ -7,6 +7,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @consultation_detail = ConsultationDetail.new
     # @consultation_matters = ConsultationMatter.all
     # @consultation_detail = ConsultationDetail.all
   end
@@ -17,7 +18,7 @@ class PropertiesController < ApplicationController
     respond_to do |format|
       if @property.save
         format.html { redirect_to "/customers/new", notice: "Property was successfully created." }
-        format.json { render :new, status: :created, location: @matching }
+        format.json { render :new, status: :created, location: @property }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @property.errors, status: :unprocessable_entity }

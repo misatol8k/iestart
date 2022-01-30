@@ -1,4 +1,6 @@
 <%= form_with(model: property, local: true) do |form| %>
+<%#= form_with(model: [property, consultation_detail], local: true) do |form| %>
+
   <% if property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -83,8 +85,6 @@
 
 
   <h3>Ｑ、購入を決断する上で相談したいことはなんですか？（複数選択可）</h3>
-  <%#= render partial: "consultation_matters/form" %>
-  <%#= render partial: "consultation_details/form" %>
   <div class="field">
     <%= form.check_box :price_and_pepayment, {},checked_value='1', unchecked_value='0' %>
     <%= form.label :価格・返済 %>

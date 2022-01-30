@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'properties#new'
-  resources :properties
+  resources :properties do
+    resources :consultation_details
+  end
 
   get 'consultation_matters/index'
   get 'consultation_matters/new'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   # get 'specialists/show'
   resources :specialists
 
-  resources :consultation_details
+  # resources :consultation_details
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
