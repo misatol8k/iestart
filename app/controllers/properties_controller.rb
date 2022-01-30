@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    6.times { @property.consultation_details.build }
+    @property.consultation_details.build
+    # 6.times { @property.consultation_details.build }
     # @consultation_detail = ConsultationDetail.new
     # @consultation_matters = ConsultationMatter.all
     # @consultation_detail = ConsultationDetail.all
