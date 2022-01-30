@@ -53,34 +53,34 @@
 
         <div class="field">
           <%= form.label :都道府県, class: "label" %>
-          <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "---"}, class: "input" ) %>
+          <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"}, class: "input" ) %>
         </div>
 
         <div class="field">
           <%= form.label :物件URL, class: "label" %>
-          <%= form.text_field :url, class: "input" %>
+          <%= form.url_field :url, class: "input", placeholder:"https://◯◯◯◯" %>
         </div>
 
         <div class="field">
           <%= form.label :物件名, class: "label" %>
-          <%= form.text_field :name, class: "input" %>
+          <%= form.text_field :name, class: "input", placeholder:"スカイレジデンス名古屋" %>
         </div>
 
         <div class="field">
           <%= form.label :その他, class: "label" %>
-          <%= form.text_field :other, class: "input" %>
+          <%= form.text_field :other, class: "input", placeholder:"◯◯号" %>
         </div>
       </div>
     </div>
 
     <div class="field">
       <%= form.label :取扱会社, class: "label" %>
-      <%= form.text_field :trader, class: "input" %>
+      <%= form.text_field :trader, class: "input", placeholder:"株式会社◯◯◯◯" %>
     </div>
 
     <div class="field">
       <%= form.label :販売価格（業者からの提案価格）, class: "label" %>
-      <%= form.text_field :price, class: "input" %>
+      <%= form.text_field :price, class: "input", placeholder:"◯◯◯万円" %>
     </div>
 
 

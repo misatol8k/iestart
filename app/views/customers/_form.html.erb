@@ -61,12 +61,12 @@
   <%= form_with(model: @customer, local: true ) do |form| %>
     <div class="field">
       <%= form.label :氏名（必須）, class: "label" %>
-      <%= form.text_field :name, class: "input" %>
+      <%= form.text_field :name, class: "input", placeholder:"家野始真理" %>
     </div>
 
     <div class="field">
       <%= form.label :メールアドレス（必須）, class: "label" %>
-      <%= form.text_field :mail, class: "input" %>
+      <%= form.text_field :mail, class: "input", placeholder:"◯◯◯◯@mail.com" %>
     </div>
   <% end %>
 

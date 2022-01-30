@@ -1,6 +1,6 @@
 <%= form_with(model: @consultation_detail, local: true ) do |form| %>
   <div class="content">
     <%= form.label :相談したい内容をなるべく具体的に記載ください %>
-    <%= form.text_field :content, class: "text" %>
+    <%= form.text_area :content, class: "text" %>
   </div>
 <% end %>
