@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @consultation_detail = ConsultationDetail.new
+    6.times { @property.consultation_details.build }
+    # @consultation_detail = ConsultationDetail.new
     # @consultation_matters = ConsultationMatter.all
     # @consultation_detail = ConsultationDetail.all
   end
@@ -35,6 +36,24 @@ class PropertiesController < ApplicationController
   end
 
   def property_params
-    params.require(:property).permit(:property_type,:newly_built_house, :used_house, :newly_built_condominium, :used_condominium, :land, :price_and_pepayment, :building_and_structure, :floor_plan, :surrounding_environment, :family_relatives, :other_point, :url, :other, :trader, :price, :prefecture_id)
+    params.require(:property).permit(
+      :property_type,
+      :newly_built_house,
+      :used_house,
+      :newly_built_condominium,
+      :used_condominium,
+      :land,
+      :price_and_pepayment,
+      :building_and_structure,
+      :floor_plan,
+      :surrounding_environment,
+      :family_relatives,
+      :other_point,
+      :other,
+      :trader,
+      :price,
+      :prefecture_id,
+      consultation_details_attributes: [:content]
+    )
   end
 end
