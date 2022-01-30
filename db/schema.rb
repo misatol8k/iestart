@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_154110) do
+ActiveRecord::Schema.define(version: 2022_01_30_082057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "property_id"
   end
 
   create_table "consultation_matters", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.string "mail", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "specialist_id"
   end
 
   create_table "matchings", force: :cascade do |t|
@@ -78,7 +80,6 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.text "description"
     t.text "career"
     t.string "icon"
-    t.string "string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "newly_built_house", null: false
