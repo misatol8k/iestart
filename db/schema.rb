@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_082057) do
+ActiveRecord::Schema.define(version: 2022_02_01_071721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_082057) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "specialist_id"
+    t.string "introducer"
   end
 
   create_table "matchings", force: :cascade do |t|
@@ -63,6 +64,12 @@ ActiveRecord::Schema.define(version: 2022_01_30_082057) do
     t.integer "other_point", null: false
     t.bigint "customer_id"
     t.integer "prefecture_id"
+    t.text "price_and_pepayment_coment"
+    t.text "building_and_structure_coment"
+    t.text "floor_plan_coment"
+    t.text "surrounding_environment_coment"
+    t.text "family_relatives_coment"
+    t.text "other_point_coment"
     t.index ["customer_id"], name: "index_properties_on_customer_id"
   end
 
