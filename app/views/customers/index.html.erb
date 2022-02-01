@@ -1,2 +1,21 @@
 <h1>Customers#index</h1>
 <p>Find me in app/views/customers/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.mail %></td>
+        <td><%= link_to '詳細', customer_path(customer.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
