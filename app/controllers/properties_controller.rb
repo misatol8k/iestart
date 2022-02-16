@@ -1,8 +1,21 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: %i[ show destroy ]
+  before_action :set_property, only: %i[ show destroy ranking ]
 
   def index
     @properties = Property.all
+  end
+
+  def ranking
+    # Calculate scores from specialists and property information.
+    @property_scores = Property.where(id: params[:id]).pluck(:newly_built_house, :used_house, :newly_built_condominium, :used_condominium )
+    @property_scores = @property_scores.flatten
+    @specialist_scores = Specialist.pluck(:newly_built_house, :used_house, :newly_built_condominium, :used_condominium )
+    @specialist_scores = @specialist_scores.map{|n| [n, @property_scores].transpose.map{|m| m.inject(:*)}}
+    @specialist_scores = @specialist_scores.map(&:sum)
+    @specialist_ids = Specialist.pluck(:id)
+    @ary = [@specialist_ids, @specialist_scores].transpose
+    @new_scores = Hash[*@ary.flatten].sort_by { |_, v| v }.reverse.to_h
+    @new_score_ids = @new_scores.keys
   end
 
   def new
