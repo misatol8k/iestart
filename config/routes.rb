@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'properties#new'
-  resources :properties
+  resources :properties do
+    member do
+      get 'ranking'
+    end
+  end
 
   get 'consultation_matters/index'
   get 'consultation_matters/new'

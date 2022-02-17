@@ -1,0 +1,32 @@
+<h1>Properties#ranking</h1>
+<%= @property.id %><br>
+<%= @property_scores %><br>
+<%= p @specialist_scores %><br>
+<%= p @new_scores %><br>
+<%= p @new_specialist_ids %><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @best_specialists.each do |specialist| %>
+      <tr>
+        <td><%= specialist.name %></td>
+        <td><%= specialist.expertise_property %></td>
+        <td><%= specialist.consultation_item %></td>
+        <td><%= specialist.qualification %></td>
+        <td><%= specialist.description %></td>
+        <td><%= specialist.career %></td>
+        <td><%= specialist.icon %></td>
+        <td><%= specialist.string %></td>
+        <td><%= link_to '詳細', specialist_path(specialist.id) %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
