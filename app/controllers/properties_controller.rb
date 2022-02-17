@@ -15,8 +15,8 @@ class PropertiesController < ApplicationController
     @specialist_ids = Specialist.pluck(:id)
     @ary = [@specialist_ids, @specialist_scores].transpose
     @new_scores = Hash[*@ary.flatten].sort_by { |_, v| v }.reverse.to_h
-    @new_specialist_ids = @new_scores.keys
-    @best_specialists = Specialist.order_as_specified(id: @new_specialist_ids)
+    @new_specialist_ids = @new_scores.keys.first(5)
+    @best_specialists = Specialist.order_as_specified(id: @new_specialist_ids).first(5)
   end
 
   def new
