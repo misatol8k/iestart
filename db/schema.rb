@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_154110) do
+ActiveRecord::Schema.define(version: 2022_02_01_071721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "property_id"
   end
 
   create_table "consultation_matters", force: :cascade do |t|
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.string "mail", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "specialist_id"
+    t.string "introducer"
   end
 
   create_table "matchings", force: :cascade do |t|
@@ -61,6 +64,12 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.integer "other_point", null: false
     t.bigint "customer_id"
     t.integer "prefecture_id"
+    t.text "price_and_pepayment_coment"
+    t.text "building_and_structure_coment"
+    t.text "floor_plan_coment"
+    t.text "surrounding_environment_coment"
+    t.text "family_relatives_coment"
+    t.text "other_point_coment"
     t.index ["customer_id"], name: "index_properties_on_customer_id"
   end
 
@@ -78,7 +87,6 @@ ActiveRecord::Schema.define(version: 2022_01_24_154110) do
     t.text "description"
     t.text "career"
     t.string "icon"
-    t.string "string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "newly_built_house", null: false

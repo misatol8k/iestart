@@ -1,32 +1,49 @@
 <h1>Properties#ranking</h1>
 <%= @property.id %><br>
-<%= @property_scores %><br>
-<%= p @specialist_scores %><br>
 <%= p @new_scores %><br>
 <%= p @new_specialist_ids %><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="green">
+  <h3>オススメの専門家が5名見つかりました</h3>
+  </div>
 
-  <tbody>
-    <% @best_specialists.each do |specialist| %>
-      <tr>
-        <td><%= specialist.name %></td>
-        <td><%= specialist.expertise_property %></td>
-        <td><%= specialist.consultation_item %></td>
-        <td><%= specialist.qualification %></td>
-        <td><%= specialist.description %></td>
-        <td><%= specialist.career %></td>
-        <td><%= specialist.icon %></td>
-        <td><%= specialist.string %></td>
-        <td><%= link_to '詳細', specialist_path(specialist.id) %></td>
-     </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="specialist">
+  <% @best_specialists.each do |specialist| %>
+    <div class="chunk">
+      <div class="icon"><p>アイコン</p><%= specialist.icon %></div>
+
+      <div class="short">
+        <div class="field">
+          <p>氏名</p><%= specialist.name %>
+        </div>
+
+        <div class="field">
+          <p>得意な物件</p><%= specialist.expertise_property %>
+        </div>
+
+        <div class="field">
+          <p>相談可能項目</p><%= specialist.consultation_item %>
+        </div>
+
+        <div class="field">
+          <p>資格</p><%= specialist.qualification %>
+        </div>
+      </div>
+
+      <div class="long">
+        <div class="field">
+          <p>自己紹介</p><%= specialist.description %>
+        </div>
+
+        <div class="field">
+          <p>経歴</p><%= specialist.career %>
+        </div>
+      </div>
+
+      <div class="btn">
+        <%# <%= form.radio_button :specialist_id, specialist.id %> %>
+        <%= specialist.id %>
+        <%= link_to '相談を申し込む', class: "next" %>
+      </div>
+    </div>
+  <% end %>

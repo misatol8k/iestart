@@ -4,26 +4,14 @@ Rails.application.routes.draw do
     member do
       get 'ranking'
     end
+  resources :consultation_details
   end
 
   get 'consultation_matters/index'
   get 'consultation_matters/new'
   get 'consultation_matters/show'
 
-  get 'customers/index'
-  get 'customers/new'
-  get 'customers/show'
-
-  # get 'specialists/index'
-  # get 'specialists/show'
+  resources :customers
   resources :specialists
-
-  # get 'matchings/index'
-  # get 'matchings/new'
-  # get 'matchings/show'
-  resources :matchings
-
-  resources :consultation_details
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

@@ -1,2 +1,78 @@
 <h1>Properties#show</h1>
 <p>Find me in app/views/properties/show.html.erb</p>
+
+<table>
+  <tr>
+    <th>新築戸建</th>
+    <td><%= @property.newly_built_house %></td>
+  </tr>
+  <tr>
+    <th>中古戸建</th>
+    <td><%= @property.used_house %></td>
+  </tr>
+  <tr>
+    <th>新築マンション</th>
+    <td><%= @property.newly_built_condominium %></td>
+  </tr>
+  <tr>
+    <th>中古マンション</th>
+    <td><%= @property.used_condominium %></td>
+  </tr>
+  <tr>
+    <th>土地のみ</th>
+    <td><%= @property.land %></td>
+  </tr>
+  <tr>
+    <th>都道府県</th>
+    <td><%= @property.prefecture_id %></td>
+  </tr>
+  <tr>
+    <th>物件URL</th>
+    <td><%= @property.url %></td>
+  </tr>
+  <tr>
+    <th>物件名</th>
+    <td><%= @property.name %></td>
+  </tr>
+  <tr>
+    <th>その他</th>
+    <td><%= @property.other %></td>
+  </tr>
+  <tr>
+    <th>取扱会社</th>
+    <td><%= @property.trader %></td>
+  </tr>
+  <tr>
+    <th>販売価格</th>
+    <td><%= @property.price %></td>
+  </tr>
+  <tr>
+    <th>価格・返済</th>
+    <td><%= @property.price_and_pepayment %></td>
+    <td><%#= @property.consultation_detail.content %></td>
+  </tr>
+  <tr>
+    <th>建物・構造</th>
+    <td><%= @property.building_and_structure %></td>
+  </tr>
+  <tr>
+    <th>間取り</th>
+    <td><%= @property.floor_plan %></td>
+  </tr>
+  <tr>
+    <th>周辺環境</th>
+    <td><%= @property.surrounding_environment %></td>
+  </tr>
+  <tr>
+    <th>家族・親族</th>
+    <td><%= @property.family_relatives %></td>
+  </tr>
+  <tr>
+    <th>その他の点</th>
+    <td><%= @property.other_point %></td>
+  </tr>
+  <tr>
+    <th>顧客ID</th>
+    <td><%= @property.customer_id %></td>
+  </tr>
+</table>
