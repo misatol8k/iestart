@@ -1,22 +1,49 @@
-<%# <% provide(:title, t('view.properties.show.title')) %> %>
+<%# provide(:title, t('view.properties.show.title')) %>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th>新築戸建</th>
+      <th>中古戸建</th>
+      <th>新築マンション</th>
+      <th>中古マンション</th>
+      <th>土地のみ</th>
+      <th>都道府県</th>
+      <th>物件URL</th>
+      <th>物件名</th>
+      <th>その他</th>
+      <th>取扱会社</th>
+      <th>販売価格</th>
+      <th>価格・返済</th>
+      <th>建物・構造</th>
+      <th>間取り</th>
+      <th>周辺環境</th>
+      <th>家族・親族</th>
+      <th>その他の点</th>
     </tr>
   </thead>
 
   <tbody>
     <% @properties.each do |property| %>
       <tr>
-        <td><%= property.property_type %></td>
+        <td><%= property.newly_built_house %></td>
+        <td><%= property.used_house %></td>
+        <td><%= property.newly_built_condominium %></td>
+        <td><%= property.used_condominium %></td>
+        <td><%= property.land %></td>
+        <td><%= property.prefecture_id %></td>
         <td><%= property.url %></td>
+        <td><%= property.name %></td>
         <td><%= property.other %></td>
         <td><%= property.trader %></td>
         <td><%= property.price %></td>
+        <td><%= property.price_and_pepayment %></td>
+        <td><%= property.building_and_structure %></td>
+        <td><%= property.floor_plan %></td>
+        <td><%= property.surrounding_environment %></td>
+        <td><%= property.family_relatives %></td>
+        <td><%= property.other_point %></td>
+        <td><%= link_to '詳細', property_path(property.id) %></td>
      </tr>
     <% end %>
   </tbody>

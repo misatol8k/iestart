@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
   # Add a comment summarizing the current schema
+  gem 'letter_opener_web'
 end
 
 group :test do

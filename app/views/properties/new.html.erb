@@ -1,7 +1,2 @@
-<h2>購入の決断に迷っている物件情報を入力してください</h2>
-<h3>検討物件</h3>
-
-<%# provide(:title, t('view.properties.new.title')) %>
-<%= render 'form', property: @property %>
-<%#= link_to t('view.show'), @property %>
-<%#= link_to t('view.back'), properties_path %>
+<%#= render 'form', property: @property %>
+<%= render 'form', {property: @property, consultation_details: @consultation_details} %>
