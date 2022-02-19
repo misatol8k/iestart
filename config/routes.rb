@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'properties#new'
   resources :properties do
     member do
+      get 'customers/new'
+    end
+    member do
       get 'ranking'
     end
   resources :consultation_details
