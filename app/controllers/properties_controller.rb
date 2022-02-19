@@ -33,11 +33,10 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
-        # format.html { redirect_to "/matchings", notice: "Property was successfully created." }
-        # format.json { render :index, status: :created, location: @matching }
-        format.html { redirect_to controller: :properties, action: :ranking, id: @property.id, notice: "Property was successfully created." }
+        # format.html { redirect_to controller: :properties, action: :ranking, id: @property.id, notice: "Property was successfully created." }
         # format.html { redirect_to "/customers/new", notice: "Property was successfully created." }
-        # format.json { render :new, status: :created, location: @property }
+        format.html { redirect_to controller: :customers, action: :new, id: @property.id, notice: "Property was successfully created." }
+        format.json { render :new, status: :created, location: @property }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @property.errors, status: :unprocessable_entity }
