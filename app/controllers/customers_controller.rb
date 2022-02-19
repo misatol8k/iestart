@@ -14,12 +14,11 @@ class CustomersController < ApplicationController
   end
 
   def create
-# binding.irb
     @customer = Customer.new(customer_params)
+    # @property = Property.last
     respond_to do |format|
       if @customer.save
-        @property.customer_id = @customer.id
-binding.irb
+         @property.customer_id = @customer.id
         ContactMailer.contact_mail(@customer).deliver
 
         format.html { redirect_to "/properties/new", notice: "Property was successfully created." }
@@ -32,7 +31,6 @@ binding.irb
   end
 
   def show
-binding.irb
     @specialist = Specialist.find_by(id: @customer.specialist_id)
     @property = Property.find_by(customer_id: @customer.id)
     # @consultation_detail = Consultation_detail.find(params[:id])
@@ -49,6 +47,6 @@ binding.irb
   end
 
   def customer_params
-    params.require(:customer).permit( :name, :mail)
+    params.require(:customer).permit( :name, :mail, :specialist_id)
   end
 end
