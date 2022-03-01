@@ -129,6 +129,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.0-x86_64-linux)
       racc (~> 1.4)
+    order_as_specified (1.7)
+      activerecord (>= 5.0.0)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -231,6 +233,8 @@ GEM
     zeitwerk (2.5.3)
 
 PLATFORMS
+  ruby
+  x86_64-darwin-19
   x86_64-darwin-20
   x86_64-linux
 
@@ -246,6 +250,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   letter_opener_web
   listen (~> 3.2)
+  order_as_specified
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 4.1)
@@ -262,7 +267,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 3.0.1p64
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.3.5
