@@ -11,13 +11,19 @@ class CustomersController < ApplicationController
     @specialists = Specialist.all
     # @consultation_matters = ConsultationMatter.all
     # @specialist = Specialist.find(params[:id])
-    # add to fix property id problem 22/3/2
+    # add to fix property id problem 22/3/2-01
+    @property = Property.find(params[:id])
+    # ---
 
   end
 
   def create
-    @customer = Customer.new(customer_params)
+    #@customer = Customer.new(customer_params)
     # @property = Property.last
+     # add to fix property id problem 22/3/2-01
+    @customer = Customer.new(name: customer_params['name'], mail: customer_params['mail'], specialist_id: customer_params['specialist_id'])
+    @property = Property.find(customer_params['property_id'])
+    # --- 22/3/2-01
     respond_to do |format|
       if @customer.save
          @property.customer_id = @customer.id
@@ -49,6 +55,9 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit( :name, :mail, :specialist_id)
+    # params.require(:customer).permit( :name, :mail, :specialist_id)
+    # add to fix property id problem 22/3/2-01
+    params.require(:customer).permit( :name, :mail, :specialist_id, :property_id)
+    # --- 22/3/2-01
   end
 end
