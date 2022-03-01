@@ -11,6 +11,8 @@ class CustomersController < ApplicationController
     @specialists = Specialist.all
     # @consultation_matters = ConsultationMatter.all
     # @specialist = Specialist.find(params[:id])
+    # add to fix property id problem 22/3/2
+
   end
 
   def create
