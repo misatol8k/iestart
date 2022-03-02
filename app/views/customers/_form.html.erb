@@ -83,7 +83,7 @@
     ㈱エンサポートのプライバシーポリシーは
     <%= link_to "こちら" %>
   </div>
-
+  <%= form.hidden_field :property_id, value: @property.id %>
   <div class="btn">
     <%= form.submit "プライバシーポリシーに同意して専門家に相談内容を送る", class: "next" %>
   </div>
