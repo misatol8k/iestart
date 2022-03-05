@@ -20,34 +20,34 @@
   <h3>Ｑ、購入の決断に迷っている物件情報を入力してください</h3>
 
     <div class="field">
-      <%= form.label :検討物件, class: "label" %>
+      <%= form.label :検討物件, class: "label" do %>
       <div class="property">
 
         <%= form.label :物件種類, class: "label" %>
         <div class="type_group">
           <div class="type">
-            <%= form.check_box :newly_built_house, {}, checked_value='1', unchecked_value='0' %>
-            <%= form.label :新築戸建 %>
+            <%= form.radio_button :property_choice, {} %>
+            <%= form.label :newly_built_house, "新築戸建" %>
           </div>
 
           <div class="type">
-            <%= form.check_box :used_house, {},checked_value='1', unchecked_value='0' %>
-            <%= form.label :中古戸建 %>
+            <%= form.radio_button :property_choice, {} %>
+            <%= form.label :used_house, "中古戸建" %>
           </div>
 
           <div class="type">
-            <%= form.check_box :newly_built_condominium, {},checked_value='1', unchecked_value='0' %>
-            <%= form.label :新築マンション %>
+            <%= form.radio_button :property_choice, {} %>
+            <%= form.label :newly_built_condominium, "新築マンション" %>
           </div>
 
           <div class="type">
-            <%= form.check_box :used_condominium, {},checked_value='1', unchecked_value='0' %>
-            <%= form.label :中古マンション %>
+            <%= form.radio_button :property_choice, {} %>
+            <%= form.label :used_condominium, "中古マンション" %>
           </div>
 
           <div class="type">
-            <%= form.check_box :land, {},checked_value='1', unchecked_value='0' %>
-            <%= form.label :土地のみ %>
+            <%= form.radio_button :property_choice, {} %>
+            <%= form.label :land, "土地のみ" %>
           </div>
         </div>
 
@@ -71,6 +71,7 @@
           <%= form.text_field :other, class: "input", placeholder:"◯◯号" %>
         </div>
       </div>
+      <% end %>
     </div>
 
     <div class="field">

@@ -70,7 +70,8 @@ class PropertiesController < ApplicationController
       :trader,
       :price,
       :prefecture_id,
-      consultation_details_attributes: [:content]
+      consultation_details_attributes: [:content],
+      :property_choice[]
     )
   end
 end
